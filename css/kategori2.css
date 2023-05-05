@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* nav */
+nav.sticky {
+  background-color: #779b58;
+}
+
+.hover:hover {
+  color: red !important;
+}
+
+nav.sticky {
+    background-color: #779b58;
+  }
+  
+
+/* banner */
+.gradient1 {
+    background-image: linear-gradient(to right, #FCF299, #FCF299, #779b58);
+}
+
+.gradient2 {
+    background-image: linear-gradient(to right, #FCF299, #FCF299, #779b58);
+}
+
+.gradient3 {
+    background-image: linear-gradient(to right, #FCF299, #FCF299, #779b58);
+}
+
+/* divide */
+.garis-vertikal {
+  border-left: 2px white solid;
+  height: 180px;
+  width: 0px;
+}
+
+/* slider */
+
+marquee {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.runtext-container {
+  background-color: #779b58;
+  background-repeat: repeat-x;
+
+  width: 850px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin: 0 60px 0 30px;
+  padding: 0 3px 0 3px;
+}
+
+.main-runtext {
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+  height: 40px;
+}
+
+.runtext-container .holder {
+  position: relative;
+  overflow: visible;
+  display: inline;
+  float: left;
+}
+
+.runtext-container .holder .text-container {
+  display: inline;
+}
+
+.runtext-container .holder a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff0000;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  line-height: -0.5em;
+  font-size: 16px;
+}
+
+.runtext-container .holder a:hover {
+  text-decoration: none;
+  color: #6600ff;
+}
+
+/* footer */
+  
+.bg-warna {
+    background-color: #9cc976;
+  }
+  
+  .bg-warna2 {
+    background-color: #779b58;
+  }
+  
+  .bg-warna3 {
+    background-color: #779b58;
+  }
+  
+  .bg-warna3:hover {
+    background-color: #779b58;
+    box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
+  }
