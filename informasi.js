@@ -1,5 +1,4 @@
 const nav = document.querySelector("nav");
-const button = document.querySelector(".button1");
 window.addEventListener("scroll", () => {
   if (document.documentElement.scrollTop > 400) {
     nav.classList.add("sticky");
