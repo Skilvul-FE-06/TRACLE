@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* nav */
+nav.sticky {
+  background-color: #779b58;
+}
+
+.hover:hover {
+  color: red !important;
+}
+
+/* carousel */
+.gambar {
+  object-fit: cover;
+  width: 100%;
+  height: 70vh;
+}
+
+.bg-warna {
+  background-color: #9cc976;
+}
+
+.bg-warna2 {
+  background-color: #779b58;
+}
+
+.bg-warna3 {
+  background-color: #779b58;
+}
+
+.bg-warna3:hover {
+  background-color: #779b58;
+  box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text {
+  text-align: justify;
+}
+
+.color1 {
+  color: #0b6d9a;
+  font-size: 6vh;
+}
+
+.color2 {
+  color: #ffc400;
+  font-size: 6vh;
+}
+
+.color3 {
+  color: #4cadff;
+  font-size: 6vh;
+}
+
+.carousel-caption {
+  z-index: 20;
+  bottom: 150px;
+}
+
+.carousel-inner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* divide */
+.garis-vertikal {
+  border-left: 2px white solid;
+  height: 180px;
+  width: 0px;
+}
+
+/* slider */
+
+marquee {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.runtext-container {
+  background-color: #779b58;
+  background-repeat: repeat-x;
+
+  width: 850px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin: 0 60px 0 30px;
+  padding: 0 3px 0 3px;
+}
+
+.main-runtext {
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+  height: 40px;
+}
+
+.runtext-container .holder {
+  position: relative;
+  overflow: visible;
+  display: inline;
+  float: left;
+}
+
+.runtext-container .holder .text-container {
+  display: inline;
+}
+
+.runtext-container .holder a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff0000;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  line-height: -0.5em;
+  font-size: 16px;
+}
+
+.runtext-container .holder a:hover {
+  text-decoration: none;
+  color: #6600ff;
+}
