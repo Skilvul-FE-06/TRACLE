@@ -91,7 +91,7 @@
                     class="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-green-600 hover:bg-green-800 hover:shadow-lg focus:outline-none">
                     Kirim
                 </button>
-                <button onclick="return btnData()" id="button-data" type="button" data-modal-toggle="modalToggles"
+                <button id="button-data" type="button" data-modal-toggle="modalToggles"
                     class="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-green-600 hover:bg-green-800 hover:shadow-lg focus:outline-none">
                     Lihat Data
                 </button>
@@ -102,7 +102,42 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script> -->
-    <script src="./public/js/script.js"></script>
+    <script>
+        let complaintForm = document.getElementById("form");
+        complaintForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get form data
+            let formData = new FormData(complaintForm);
+            let complaintData = {
+                name: formData.get("name"),
+                address: formData.get("address"),
+                city: formData.get("city"),
+                complaint: formData.get("comment"),
+            };
+
+            // Send complaint data to API
+            fetch("https://645130aee1f6f1bb22aaa3e5.mockapi.io/api/v1/petugas", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(complaintData),
+            })
+                .then(function () {
+                    alert("Keluhan telah berhasil terkirim!");
+                    complaintForm.reset();
+                })
+                .catch(function () {
+                    alert("Terjadi kesalahan. Mohon coba lagi.");
+                });
+        });
+
+        let viewCardsButton = document.getElementById("button-data");
+        viewCardsButton.addEventListener("click", function () {
+            window.location.href = "dataPetugas.html";
+        });
+    </script>
 </body>
 
 </html>
