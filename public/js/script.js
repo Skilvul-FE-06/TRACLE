@@ -1,6 +1,3 @@
-// DEFINE API
-const API_URL = "https://645130aee1f6f1bb22aaa3e5.mockapi.io/api/v1/petugas";
-
 // REGISTER FUNCTIONS
 function register() {
     var username = document.getElementById("username").value;
@@ -54,42 +51,49 @@ function validate() {
 }
 
 // DATA PETUGAS FUNCTIONS
-// Ambil elemen HTML untuk menampilkan data kota
-const cityContainer = document.querySelector(".city-container");
+function fetchCityData() {
+    fetch("https://645130aee1f6f1bb22aaa3e5.mockapi.io/api/v1/petugas")
+        .then((response) => response.json())
+        .then((data) => {
+            const cityCount = countCityData(data);
+            displayCityData(cityCount);
+        })
+        .catch((error) => console.error(error));
+}
 
-// Lakukan request API untuk mendapatkan data kota
-fetch(API_URL)
-    .then((response) => response.json())
-    .then((data) => {
-        // Lakukan pengolahan data untuk menghitung jumlah data kota yang sama
-        const cityCount = data.reduce((acc, cur) => {
-            if (acc[cur.city]) {
-                acc[cur.city]++;
-            } else {
-                acc[cur.city] = 1;
-            }
-            return acc;
-        }, {});
+function countCityData(data) {
+    const cityCount = data.reduce((acc, cur) => {
+        if (acc[cur.city]) {
+            acc[cur.city]++;
+        } else {
+            acc[cur.city] = 1;
+        }
+        return acc;
+    }, {});
 
-        // Tampilkan data kota dalam card
-        Object.keys(cityCount).forEach((city) => {
-            const card = `
-      <a
-            href="#"
-            class="group flex justify-between rounded-xl bg-white p-4 shadow-xl transition-shadow hover:shadow-lg sm:p-6 lg:p-8"
-            >
-            <div>
-                <h3 class="text-3xl font-bold text-green-600 sm:text-3xl">${cityCount[city]} Data</h3>
-                <div class="mt-4 border-t-2 border-gray-100 pt-4">
-                <p class="text-sm font-large uppercase text-gray-500">${city}</p>
+    return cityCount;
+}
+
+function displayCityData(cityCount) {
+    const cityContainer = document.querySelector(".city-container");
+
+    Object.keys(cityCount).forEach((city) => {
+        const card = `
+            <a href="#" class="group flex justify-between rounded-xl bg-white p-4 shadow-xl transition-shadow hover:shadow-lg sm:p-6 lg:p-8">
+                <div>
+                    <h3 class="text-3xl font-bold text-green-600 sm:text-3xl">${cityCount[city]} Data</h3>
+                    <div class="mt-4 border-t-2 border-gray-100 pt-4">
+                        <p class="text-sm font-large uppercase text-gray-500">${city}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="mt-8 inline-flex items-center gap-2 text-green-600 sm:mt-12 lg:mt-16">
-                <p class="font-medium sm:text-lg"></p>
-            </div>
-        </a>
-    `;
-            cityContainer.innerHTML += card;
-        });
-    })
-    .catch((error) => console.error(error));
+                <div class="mt-8 inline-flex items-center gap-2 text-green-600 sm:mt-12 lg:mt-16">
+                    <p class="font-medium sm:text-lg"></p>
+                </div>
+            </a>
+        `;
+        cityContainer.innerHTML += card;
+    });
+}
+
+// Panggil fungsi-fungsi saat halaman dimuat
+fetchCityData();
