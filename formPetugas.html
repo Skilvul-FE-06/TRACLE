@@ -48,8 +48,7 @@
                 class="text-center text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black mb-10">
                 Silahkan isi form berikut
             </h1>
-            <form method="POST" action="https://645130aee1f6f1bb22aaa3e5.mockapi.io/api/v1/petugas" id="form"
-                novalidate>
+            <form id="form">
                 <div class="relative z-0 w-full mb-5">
                     <input type="text" id="name" name="name" placeholder=" " required
                         class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
@@ -88,7 +87,7 @@
                     <label for="comment" class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Masukkan
                         keluhan</label>
                 </div>
-                <button onclick="return validate()" id="button" type="submit" data-modal-toggle="modalToggles"
+                <button id="button" type="submit" data-modal-toggle="modalToggles"
                     class="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-green-600 hover:bg-green-800 hover:shadow-lg focus:outline-none">
                     Kirim
                 </button>
